@@ -1,7 +1,31 @@
 .App {
   text-align: center;
 }
+.logo{
+  position: fixed;
+  top: -8px;
+  right: 20px;
+  z-index: 99999;
+  font-size: 1.7em;
+  color: #c6370b;
+}
+.logo span{
+  color: black;
+}
+button:focus,
+input:focus{
+  outline: 0 !important;
+}
 
+button{
+  transition: 0.1s ease-in;
+  background-color: #c6370b !important;
+}
+
+button:hover{
+  cursor: pointer !important;
+  background-color: rgb(176, 39, 39) !important;
+}
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
@@ -90,4 +114,21 @@ z-index: 9999;
 }
  .playerVisible h3{
   display: block;
+}
+
+.relatedButton{
+  display: none;
+}
+
+.buttonVisible{
+  display: block;
+  background-color: black;
+  border: none;
+  color: white;
+  font-size: 2em;
+  width: 150px;
+  height: 80px;
+  position: absolute;
+  right: 13vw;
+  top: 42.5vh;
 }
