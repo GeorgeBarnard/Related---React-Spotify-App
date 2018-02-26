@@ -1,7 +1,7 @@
-let prod = true;
+let prod = false;
 
 const scopes = "user-read-private+user-read-email+playlist-read-private+user-top-read+user-read-recently-played";
-const redirectURI = prod ? "https://calm-fjord-61683.herokuapp.com/" : "http://localhost:8080/";
+const redirectURI = prod ? "https://calm-fjord-61683.herokuapp.com/" : "http://localhost:3000/";
 
 export const clientID = "3dbf0bf935864a60b4dd00aec0930702";
 export const clientSecret = "3c139e27cf864effadacc48ce2133ffd";

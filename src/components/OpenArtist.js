@@ -7,7 +7,8 @@ class OpenArtist extends Component {
     var current = this.props.currentItem
     console.log(current)
     var genres;
-    current ?  genres = current.genres.map(result => (
+    var truncated = current ? current.genres.slice(0,8) : ''
+    current ?  genres = truncated.map(result => (
       <Genre>{result}</Genre>
     )) : ''
     return (
@@ -96,17 +97,21 @@ const Inner = styled.section`
   .right{
     background-color: white;
     text-align: left;
-    padding: 30px;
+    padding: 10px;
+    @media (min-width: ${Sizes.laptop}) {
+      padding: 30px;
+    }
   }
 `
 const Title = styled.h1`
   position: relative;
-  margin: 0;
+  margin: 0 0 10px 0;
   font-size: 2em;
   font-weight: 900;
   z-index: 99;
   max-width: 80%;
   @media (min-width: ${Sizes.laptop}) {
+    margin: 0;
     font-size: 4em;
   }
 `
@@ -124,8 +129,11 @@ color: white;
 font-size: 2em;
 font-weight: 700;
 width: 150px;
-height: 80px;
-margin-top: 15px;
+@media (min-width: ${Sizes.laptop}) {
+  font-size: 2em;
+  width: 150px;
+  height: 80px;
+}
 span{
   color: black;
 }
@@ -143,14 +151,22 @@ const GenreSection = styled.section`
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  p:nth-last-child(1){
+    margin-bottom: 15px;
+  }
 `
 const Genre = styled.p`
   color: white;
-  font-size: 0.6em;
+  font-size: 0.45em;
   font-style: italic;
   background-color: #bc3e00;
   padding: 5px;
   font-weight: 700;
   display: inline-block;
-  margin: 10px 2.5px 5px;
+  margin: 2.5px;
+  height: fit-content;
+  @media (min-width: ${Sizes.laptop}) {
+    margin: 10px 2.5px 5px;
+    font-size: 0.6em;
+  }
 `

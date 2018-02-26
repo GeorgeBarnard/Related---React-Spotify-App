@@ -90,6 +90,7 @@ class CubeList extends Component {
       currentItem
     })
 
+
     // if ((currentObject).classList.contains('fullOpen')) {
     //   currentObject.classList.remove("fullOpen");
     //   player.classList.remove("playerVisible");
@@ -158,6 +159,8 @@ class CubeList extends Component {
 
   render() {
 
+    document.body.classList.toggle('noScroll', this.state.cardOpen)
+
     if(this.state.artists){
       var artists = this.state.artists.map((newitem) => {
         if (newitem.images[0] == undefined) {
@@ -170,7 +173,7 @@ class CubeList extends Component {
             <CubeImage src={newitem.images[0].url}></CubeImage>
             <CubeTitle className='titlediv'>
               <img src={newitem.images[0].url}></img>
-            <p>{newitem.name}</p>
+              <p>{newitem.name}</p>
             </CubeTitle>
           </Cube>
         )
@@ -182,7 +185,7 @@ class CubeList extends Component {
     var trackCheck = this.state.tracks ? this.state.tracks[0] : ''
 
     return (
-      <CubeContainer>
+      <CubeContainer scroll={this.state.cardOpen}>
         <OpenArtist
           toggle={this.state.cardOpen}
           close={() => this.closeModal()}
@@ -212,6 +215,7 @@ const CubeContainer = styled.section`
    margin-top: 90px;
    padding: 0 25px;
    box-sizing: border-box;
+   overflow: ${props => props.scroll ? 'hidden' : 'scroll'};
    @media (max-width: 992px) {
       margin-top: 200px;
    }
