@@ -11,10 +11,7 @@ class Player extends Component {
         <h3>Top Track</h3>
         <h2>{props.trackName}</h2>
         <h4>- {props.artistName}</h4>
-      <ReactAudioPlayer autoPlay src={props.previewUrl} controls style={{
-          position: 'relative',
-          zIndex: '9999'
-        }}/>
+      <ReactAudioPlayer autoPlay src={props.previewUrl} controls />
       </TrackPlayer>
     );
   }
@@ -63,11 +60,13 @@ audio{
  display: inline-block;
  background-color: #fafafa;
  margin: 0 auto;
- width: 250px;
- @media (min-width: ${Sizes.tablet}) {
-   width: 300px;
- }
+ width: 85%;
+ padding: 0 7.5%;
+ position: relative;
+ z-index: 9999;
  @media (min-width: ${Sizes.laptop}) {
+   width: 300px;
+   padding: 0;
    margin: initial;
  }
 }

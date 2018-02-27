@@ -117,10 +117,10 @@ const Title = styled.h1`
 `
 const BackButton = styled.button`
   position: absolute;
-  top: 30px;
+  right: 5px;
+  top: 5px;
   width: 50px;
   height: 50px;
-  right: 30px;
   z-index: 99999;
   font-size: 2em;
   display: flex;
@@ -129,6 +129,10 @@ const BackButton = styled.button`
   transition: 0.1s ease-in;
   &:hover{
     background-color: #bc3e00;
+  }
+  @media (min-width: ${Sizes.laptop}) {
+    top: 30px;
+    right: 30px;
   }
 `
 

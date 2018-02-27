@@ -86,7 +86,7 @@ class Call extends Component {
      <Container className = "container" >
        <LogoHeader>
          {/* <Menu /> */}
-       <h1 className="logo">Syno<span>Hymn</span>.</h1>
+       <h1 className="logo">Rel<span>ated</span>.</h1>
        </LogoHeader>
        <Header>
         <GroupStyle className="input-group">
@@ -164,7 +164,7 @@ const LogoHeader = styled.section`
    position: fixed;
    margin: 0;
    top: 8px;
-   right:320px;
+   right: 40px;
    z-index: 99999;
    font-size: 1.7em;
    color: #c6370b;

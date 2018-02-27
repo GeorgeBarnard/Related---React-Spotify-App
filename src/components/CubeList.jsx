@@ -283,6 +283,7 @@ const BackButton = styled.button`
    border: 0px;
    font-size: 1.3em;
    color: white;
+   background-color: #c6370b;
    z-index: 999;
    display: none;
    @media (max-width: 992px) {
