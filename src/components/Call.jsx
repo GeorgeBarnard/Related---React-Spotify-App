@@ -85,7 +85,7 @@ class Call extends Component {
     return (
      <Container className = "container" >
        <LogoHeader>
-         <Menu />
+         {/* <Menu /> */}
        <h1 className="logo">Syno<span>Hymn</span>.</h1>
        </LogoHeader>
        <Header>
@@ -160,4 +160,13 @@ const LogoHeader = styled.section`
  width: 100%;
  height: 50px;
  z-index: 999;
+ .logo{
+   position: fixed;
+   margin: 0;
+   top: 8px;
+   right:320px;
+   z-index: 99999;
+   font-size: 1.7em;
+   color: #c6370b;
+ }
 `

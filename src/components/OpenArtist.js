@@ -117,15 +117,19 @@ const Title = styled.h1`
 `
 const BackButton = styled.button`
   position: absolute;
-  top: calc(10% - 25px);
+  top: 30px;
   width: 50px;
   height: 50px;
-  right: calc(10% - 25px);
+  right: 30px;
   z-index: 99999;
   font-size: 2em;
   display: flex;
   justify-content: center;
   border: none;
+  transition: 0.1s ease-in;
+  &:hover{
+    background-color: #bc3e00;
+  }
 `
 
 const RelatedButton = styled.button`
@@ -135,13 +139,17 @@ color: white;
 font-size: 2em;
 font-weight: 700;
 width: 150px;
+transition: 0.1s ease-in;
+&:hover{
+  background-color: #252525;
+}
 @media (min-width: ${Sizes.laptop}) {
   font-size: 2em;
   width: 150px;
   height: 80px;
 }
 span{
-  color: black;
+  color: #bc3e00;
 }
 `
 
