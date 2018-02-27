@@ -209,6 +209,14 @@ class CubeList extends Component {
 
 export default CubeList;
 
+const Sizes = {
+  desktop: (1100 + 'px'),
+  laptop: (992 + 'px'),
+  tablet: (768 + 'px'),
+  phone: (564 + 'px'),
+  xsPhone: (376 + 'px')
+}
+
 const CubeContainer = styled.section`
    display: flex;
    flex-wrap: wrap;
@@ -234,7 +242,7 @@ const CubeTitle = styled.section`
    bottom: calc(10% + 15px);
    transform: rotate(-90deg);
    transform-origin: bottom left;
-   left: calc(10% + 5px);
+   left: calc(10% + 25px);
    background-color: white;
    font-weight: 900;
    padding: 5px;
@@ -245,6 +253,9 @@ const CubeTitle = styled.section`
    background-size: cover;
    border-radius: 10px;
    overflow: hidden;
+   @media (min-width: ${Sizes.tablet}) {
+      left: calc(10% + 5px);
+   }
    img{
      width: 3000%;
      position: absolute;
