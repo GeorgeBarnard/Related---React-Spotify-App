@@ -11,7 +11,7 @@ class Player extends Component {
         <h3>Top Track</h3>
         <h2>{props.trackName}</h2>
         <h4>- {props.artistName}</h4>
-        <ReactAudioPlayer src={props.previewUrl} controls style={{
+      <ReactAudioPlayer autoPlay src={props.previewUrl} controls style={{
           position: 'relative',
           zIndex: '9999'
         }}/>
@@ -54,6 +54,7 @@ align-items: center;
   width: ${props => props.open ? '80%' : 'calc(100% - 540px)'};
   top: 0px;
   height: ${props => props.open ? '70px' : '50px'};
+  right: ${props => props.open ? '10%' : '240px'};
 }
 h3{
  display: none;
@@ -70,6 +71,14 @@ audio{
    margin: initial;
  }
 }
+h2,
+h4{
+ display: inline-block;
+ margin: 2px;
+ @media (min-width: ${Sizes.laptop}) {
+   margin: 0 5px;
+ }
+}
 h2{
  font-size: 0.6em;
  @media (min-width: ${Sizes.laptop}) {
@@ -80,16 +89,9 @@ h4{
   font-size: 0.8em;
    @media (min-width: ${Sizes.laptop}) {
     font-size: 1.3em;
-    margin: 0 7.5px;
+    margin: 0 15px;
    }
 }
-h2,
-h4{
- display: inline-block;
- margin: 2px;
- @media (min-width: ${Sizes.laptop}) {
-   margin: 0 5px;
- }
-}
+
 
 `

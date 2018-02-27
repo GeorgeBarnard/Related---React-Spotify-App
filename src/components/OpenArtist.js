@@ -25,7 +25,7 @@ class OpenArtist extends Component {
        </section>
      </Inner>
      <BackgroundImage src={current ? current.images[0].url : ''}></BackgroundImage>
-     <BackButton onClick={() => this.props.close()}>Close</BackButton>
+    <BackButton onClick={() => this.props.close()}>X</BackButton>
     </OpenOuter>
     );
   }
@@ -117,9 +117,15 @@ const Title = styled.h1`
 `
 const BackButton = styled.button`
   position: absolute;
-  top: 20px;
-  left: 20px;
-  z-index: 99;
+  top: calc(10% - 25px);
+  width: 50px;
+  height: 50px;
+  right: calc(10% - 25px);
+  z-index: 99999;
+  font-size: 2em;
+  display: flex;
+  justify-content: center;
+  border: none;
 `
 
 const RelatedButton = styled.button`

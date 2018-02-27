@@ -40,6 +40,7 @@ class Call extends Component {
   }
 
   search() {
+    if(this.props.location.state){
     const BASE_URL = 'https://api.spotify.com/v1/search?';
     const FETCH_URL = BASE_URL + 'q=' + this.state.query + '&type=artist&limit=20';
     const { authToken } = this.props.location.state.auth;
@@ -60,9 +61,12 @@ class Call extends Component {
       this.refs.list.updateList(artists);
       console.log('success')
     } else {
-      this.props.history.push('/auth')
+      this.props.history.push('/')
     }
     })
+  } else {
+    this.props.history.push('/')
+  }
   }
 
   render() {
@@ -71,7 +75,7 @@ class Call extends Component {
      <Container className = "container" >
        <LogoHeader>
          <Menu />
-         <h1 className="logo">Rel<span>ated</span>.</h1>
+       <h1 className="logo">Syno<span>Hymn</span>.</h1>
        </LogoHeader>
        <Header>
         <GroupStyle className="input-group">
