@@ -11,13 +11,25 @@ import Menu from './Menu'
 
 import styled from 'styled-components';
 
+const searches = [
+  'red',
+  'green',
+  'blue',
+  'orange',
+  'pink',
+  'yellow',
+  'cream',
+  'purple',
+  'black',
+  'white'
+]
+
 
 class Call extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      query: "eagle", // my query
       artist: [],
       tracks: [
         {
@@ -34,15 +46,14 @@ class Call extends Component {
   }
 
   componentDidMount() {
-    this.setState({query: 'green'})
-    console.log(this.state.query)
     this.search()
   }
 
   search() {
     if(this.props.location.state){
     const BASE_URL = 'https://api.spotify.com/v1/search?';
-    const FETCH_URL = BASE_URL + 'q=' + this.state.query + '&type=artist&limit=20';
+    var query = searches[Math.floor(Math.random() * searches.length)];
+    const FETCH_URL = BASE_URL + 'q=' + query + '&type=artist&limit=20';
     const { authToken } = this.props.location.state.auth;
 
     var myOptions = {

@@ -1,4 +1,4 @@
-let prod = true;
+let prod = false;
 
 const scopes = "user-read-private+user-read-email+playlist-read-private+user-top-read+user-read-recently-played";
 const redirectURI = prod ? "https://calm-fjord-61683.herokuapp.com/" : "http://localhost:3000/";

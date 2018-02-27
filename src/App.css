@@ -18,15 +18,15 @@ input:focus{
   outline: 0 !important;
 }
 
-button{
+/* button{
   transition: 0.1s ease-in;
   background-color: #c6370b !important;
-}
+} */
 
-button:hover{
+/* button:hover{
   cursor: pointer !important;
   background-color: rgb(176, 39, 39) !important;
-}
+} */
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
