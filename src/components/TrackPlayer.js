@@ -33,9 +33,9 @@ const TrackPlayer = styled.section`
 position: fixed;
 width: ${props => props.open ? '80%' : '100%'};
 background-color: #fafafa;
-top: ${props => props.open ? '0' : '105px'};
+top: ${props => props.open ? '10%' : '105px'};
 right: ${props => props.open ? '10%' : '0px'};
-transform: translateY(${props => props.open ? 'calc(10vh - 5px)' : '0'});
+transform: none;
 padding:  10px 5px 5px;
 box-sizing: border-box;
 height: auto;
@@ -49,6 +49,7 @@ align-items: center;
 @media (min-width: ${Sizes.laptop}) {
   padding:  5px 30px;
   width: ${props => props.open ? '80%' : 'calc(100% - 540px)'};
+  transform: translateY(${props => props.open ? 'calc(10vh - 5px)' : '0'});
   top: 0px;
   height: ${props => props.open ? '70px' : '50px'};
   right: ${props => props.open ? '10%' : '240px'};

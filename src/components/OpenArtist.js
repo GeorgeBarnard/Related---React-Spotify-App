@@ -127,6 +127,7 @@ const BackButton = styled.button`
   justify-content: center;
   border: none;
   transition: 0.1s ease-in;
+  background-color: rgb(255, 255, 255);
   &:hover{
     background-color: #bc3e00;
   }
@@ -144,6 +145,7 @@ font-size: 2em;
 font-weight: 700;
 width: 150px;
 transition: 0.1s ease-in;
+text-align: center;
 &:hover{
   background-color: #252525;
 }
