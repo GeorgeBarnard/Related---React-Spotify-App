@@ -145,50 +145,53 @@ const StyInner = styled.section`
     }
   }
   .enterButton {
-    margin : 20 px auto;
-    position : relative;
-    appearance : none;
-    background : #c6370b;
-    padding : 1e m 2e m;
-    border : none;
-    color : white;
-    font - size : 1e m;
-    cursor : pointer;
-    outline : none;
-    overflow : hidden;
-    border - radius : 100 px;
-    @media(min - width : $ {Sizes.laptop}) {
-      font - size : 2e m;
+     margin: 20px auto;
+     position: relative;
+     appearance: none;
+     background: #c6370b;
+     padding: 1em 2em;
+     border: none;
+     color: white;
+     font-size: 1em;
+     cursor: pointer;
+     outline: none;
+     overflow: hidden;
+     border-radius: 100px;
+     @media (min-width: ${Sizes.laptop}) {
+       font-size: 2em;
+     }
+     span {
+         position: relative;
+         pointer-events: none;
+     }
+     &::before {
+         --size: 0;
+         content: '';
+         position: absolute;
+         left: var(--x);
+         top: var(--y);
+         width: var(--size);
+         height: var(--size);
+         background: radial-gradient(circle closest-side,#1eb11b,transparent);
+         transform: translate(-50%, -50%);
+         transition: width .2s ease, height .2s ease;
+     }
+     &:hover::before {
+         --size: 400px;
+     }
     }
-
-    span {
-      position: relative;
-      pointer - events: none;
-    } &:: before {
-      --size: 0;
-      content: '';
-      position: absolute;
-      left: var(--x);
-      top: var(--y);
-      width: var(--size);
-      height: var(--size);
-      background: radial - gradient(circle closest - side, #1eb11b, transparent);
-      transform: translate(-50 %, -50 %);
-      transition: width .2 s ease,
-      height .2 s ease;
-    } &: hover :: before {
-      --size: 400 px;
-    }
-    }.github {
-    color: black;
-    p {
-      max - width: 80 %;
-      margin: 0 auto;
-      display: flex;
-      justify - content: center;
-      align - items: center;
-    }
-    svg {width: 30 px;
-      margin: -2 px 10 px 0;}
-    }
+    .github{
+       color: black;
+       p{
+         max-width: 80%;
+         margin: 0 auto;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+       }
+       svg{
+         width: 30px;
+         margin: -2px 10px 0;
+       }
+     }
 `
