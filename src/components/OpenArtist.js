@@ -1,46 +1,47 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import Sizes from '../mediaqueries.js'
 
-class OpenArtist extends Component {
+export default class OpenArtist extends Component {
 
   render() {
     var current = this.props.currentItem
-    console.log(current)
-    var genres;
+    var genres
+    //set max genres to display
     var truncated = current ? current.genres.slice(0,8) : ''
     current ?  genres = truncated.map(result => (
-      <Genre>{result}</Genre>
+      <Genre key={result}>{result}</Genre>
     )) : ''
+
     return (
     <OpenOuter toggle={this.props.toggle}>
-     <Inner>
-       <section className='inner left'>
-         <img src={current ? current.images[0].url : ''}></img>
-       </section>
-       <section className='inner right'>
-        <Title>{current ? current.name : ''}</Title>
-        <GenreSection>{current ? genres : ''}</GenreSection>
-        <RelatedButton className={current ? 'button' + current.id : ''} onClick={() => this.props.relatedArtists(current ? current.href : '')}>Rel<span>ated</span></RelatedButton>
-        {this.props.children}
-       </section>
-     </Inner>
-     <BackgroundImage src={current ? current.images[0].url : ''}></BackgroundImage>
-    <BackButton onClick={() => this.props.close()}>X</BackButton>
+      <Inner>
+        <section className='inner left'>
+          <img src={current ? current.images[0].url : ''}></img>
+        </section>
+        <section className='inner right'>
+          <Title>{current ? current.name : ''}</Title>
+          <GenreSection>{current ? genres : ''}</GenreSection>
+          <RelatedButton
+            className={current ? 'button' + current.id : ''}
+            onClick={() => this.props.relatedArtists(current ? current.href : '')}
+            >
+            Rel<span>ated</span>
+          </RelatedButton>
+        </section>
+      </Inner>
+      <BackgroundImage src={current ? current.images[0].url : ''}></BackgroundImage>
+      <BackButton onClick={() => this.props.close()}>X</BackButton>
     </OpenOuter>
     );
   }
-
 }
 
-export default OpenArtist;
+// Styled Components
 
-const Sizes = {
-  desktop: (1100 + 'px'),
-  laptop: (992 + 'px'),
-  tablet: (768 + 'px'),
-  phone: (564 + 'px'),
-  xsPhone: (376 + 'px')
-}
+// All Styled Components are Prefixed with 'Sty' for destinction in the Render
+
+
 
 const OpenOuter = styled.section`
   width: 100%;

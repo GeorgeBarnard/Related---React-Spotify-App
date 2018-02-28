@@ -1,35 +1,28 @@
 import React, { Component } from 'react';
 import ReactAudioPlayer from 'react-audio-player'
 import styled from 'styled-components';
+import Sizes from '../mediaqueries.js'
 
-class Player extends Component {
+export default class Player extends Component {
 
   render() {
     var props = this.props
     return (
-      <TrackPlayer open={this.props.open}>
+      <StyTrackPlayer open={props.open}>
         <h3>Top Track</h3>
         <h2>{props.trackName}</h2>
         <h4>- {props.artistName}</h4>
-      <ReactAudioPlayer autoPlay src={props.previewUrl} controls />
-      </TrackPlayer>
+        <ReactAudioPlayer autoPlay src={props.previewUrl} controls/>
+      </StyTrackPlayer>
     );
   }
-
 }
 
-export default Player;
+// Styled Components
 
+// All Styled Components are Prefixed with 'Sty' for destinction in the Render
 
-const Sizes = {
-  desktop: (1100 + 'px'),
-  laptop: (992 + 'px'),
-  tablet: (768 + 'px'),
-  phone: (564 + 'px'),
-  xsPhone: (376 + 'px')
-}
-
-const TrackPlayer = styled.section`
+const StyTrackPlayer = styled.section`
 position: fixed;
 width: ${props => props.open ? '80%' : '100%'};
 background-color: #fafafa;
